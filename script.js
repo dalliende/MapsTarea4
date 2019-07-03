@@ -167,5 +167,7 @@ function Vuelos(data) {
 }
 
 function moveMarker(Marker, position) {
-  Marker.setPosition(new google.maps.LatLng(position[0], position[1]));
+  if (Marker) {
+    Marker.setPosition(new google.maps.LatLng(position[0], position[1]));
+  }
 }
