@@ -7,6 +7,7 @@ var AirportsMarkers = {};
 var colors = {};
 var FlightsMarkers = {};
 var infowindow;
+var path = "https://github.com/dalliende/MapsTarea4/blob/master/";
 
 function getRandomColor() {
   var letters = "0123456789ABCDEF";
@@ -73,7 +74,7 @@ function Airports(data) {
     if (airports.hasOwnProperty(element)) {
     } else {
       airports[element] = data[element];
-      var image = "/airport.png";
+      var image = path + "/airport.png";
       var Airportmarker = new google.maps.Marker({
         position: {
           lat: data[element]["airport_position"][0],
@@ -132,7 +133,7 @@ function Vuelos(data) {
       flights[element["code"]] = teoricalPath;
 
       var numero = (Object.keys(flights).length % 4) + 1;
-      var image = "/plane" + numero.toString() + ".png";
+      var image = path + "/plane" + numero.toString() + ".png";
       var FlightMarker = new google.maps.Marker({
         position: { lat: origin_pos[0], lng: origin_pos[1] },
         map: map,
